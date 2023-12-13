@@ -52,6 +52,11 @@ app.get("/getForecast", async (req, res) => {
     // TODO: Calculate moisture level, divide by 10
     let moistLevel = data.current.humidity / 10;
 
+    // Get wind kph
+    let windKph = data.current.wind_kph;
+    // WindDegree
+    let windDegree = data.current.wind_degree;
+
     // TODO: Calculate sum, maximum, and minimum temperature
     const forecastDay = data.forecast.forecastday[0];
     const hours = forecastDay.hour;
@@ -101,6 +106,8 @@ app.get("/getForecast", async (req, res) => {
       minTemp,
       maxUVIndex,
       maxUVTime,
+      windKph,
+      windDegree,
     });
   } catch (error) {
     console.error("Error fetching data from Weather API:", error);
