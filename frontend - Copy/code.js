@@ -84,15 +84,15 @@ cityForm.onsubmit = async function (event) {
 
 	let windDegreeEmojis = "";
 	
-	// if (forecastData.windDegree === "N"){
-	// 	windDegreeEmojis = "⬆️ North"
-	// } else if (forecastData.windDir === "E") {
-	// 	windDegreeEmojis = "➡️ East"
-	// } else if (forecastData.windDir === "S") {
-	// 	windDegreeEmojis = "⬇️ South"
-	// } else if (forecastData.windDir === "W") {
-	// 	windDegreeEmojis = "⬅️ West"
-	// };
+	if (forecastData.windDir === "N"){
+		windDegreeEmojis = "⬆️ North"
+	} else if (forecastData.windDir === "E") {
+		windDegreeEmojis = "➡️ East"
+	} else if (forecastData.windDir === "S") {
+		windDegreeEmojis = "⬇️ South"
+	} else if (forecastData.windDir === "W") {
+		windDegreeEmojis = "⬅️ West"
+	};
 	
 	// TODO: Determine moon phase emojis based on "result.moonPhase"
 	// take these emoji and names for your conditional statement for moon phases
@@ -143,7 +143,7 @@ cityForm.onsubmit = async function (event) {
         <div>Chance of rain: ${forecastData.chanceOfRain}%</div>
         <div>Moist Level: ${moistLevelEmojis}</div>
         <div>Moon Phase: ${moonPhaseEmojis}</div>
-		<div>Wind Degree: ${forecastData.windDegree}°</div>
+		<div>Wind Direction: ${windDegreeEmojis}</div>
 		<div>Wind Speed: ${forecastData.windKph} Km/Hr</div>
         <div>Max UV Index: ${forecastData.maxUVIndex}</div>
         <div>Max UV Time: ${forecastData.maxUVTime}</div>
